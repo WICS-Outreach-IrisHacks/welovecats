@@ -18,6 +18,10 @@ img {
     padding: 10px;
 }
 
+button {
+    padding: 10px;
+}
+
 #start {
     display: table-cell;
     margin: auto;
