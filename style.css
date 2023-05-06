@@ -22,6 +22,10 @@ button {
     padding: 10px;
 }
 
+button:focus {
+    background-color:rgb(174, 213, 247);
+}
+
 #start {
     display: table-cell;
     margin: auto;

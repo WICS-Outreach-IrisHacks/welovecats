@@ -46,13 +46,29 @@ function allChecked() { // returns true if all are checked
     return energy_level !== undefined && grooming !== undefined && social_needs !== undefined && indoor !== undefined && intelligence !== undefined;
 }
 
-function determineCat() {
-    if (allChecked()) {
-        // increase counts and choosing a cat (tie breaking if necessary)
-        console.log("I have all answers");
+function addPoints(value, key, index) {
+    if (value === catInfo[key][index]) { catPoints[key] += 2; }
+    else if (value+1 === catInfo[key][index] || value-1 === catInfo[key][index]) { catPoints[key] += 1; }
+}
 
+function setCatPoints() {
+    if (allChecked()) {
+        console.log("I have all answers");
+        // increase counts and choosing a cat (tie breaking if necessary)
+        let clickedValues = [energy_level, grooming, social_needs, indoor, intelligence];
+        Object.keys(catInfo).forEach((key) => {
+            for (let i = 0; i < 5; i++) {
+                addPoints(clickedValues[i], key, i);
+            }
+        });
+        console.log(catPoints);
     }
     else {
         alert("Please answer all the questions");
     }
+}
+
+function getCat() {
+    setCatPoints();
+    // determine which cat is highest in catPoints -> API call
 }
