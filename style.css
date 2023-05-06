@@ -25,3 +25,7 @@ img {
     height: 30px;
     width: 100px;
 }
+
+#start-link {
+    text-decoration: none;
+}
