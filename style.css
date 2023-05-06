@@ -1,0 +1,19 @@
+h1 {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+div {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+#start {
+    display: table-cell;
+    margin: auto;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+}
