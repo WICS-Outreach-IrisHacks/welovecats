@@ -26,6 +26,10 @@ button:focus {
     background-color:rgb(174, 213, 247);
 }
 
+.selected {
+    background-color: green;
+}
+
 #start {
     display: table-cell;
     margin: auto;
