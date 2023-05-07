@@ -5,7 +5,6 @@ let indoor = undefined;
 let intelligence = undefined;
 const BREEDS_BASE_URL = "https://api.thecatapi.com/v1/breeds";
 const IMAGES_BASE_URL =  "https://api.thecatapi.com/v1/images/search"; //?limit=10&breed_ids=beng&api_key=REPLACE_ME"
-let APIkey = "live_kMGI0wSz4LUHdvlhadXKk8fMnPx7N8t66jSLdQjJw0OWfD84322ydppCTMY9leZf";
 let description = undefined;
 let temperament = undefined;
 let catName = undefined;
@@ -64,8 +63,12 @@ function allChecked() { // returns true if all are checked
 }
 
 function addPoints(value, key, index) {
-    if (value === catInfo[key][index]) { catPoints[key] += 2; }
-    else if (value+1 === catInfo[key][index] || value-1 === catInfo[key][index]) { catPoints[key] += 1; }
+    if ( index === 3 )
+
+    else {
+        if (value === catInfo[key][index]) { catPoints[key] += 2; }
+        else if (value+1 === catInfo[key][index] || value-1 === catInfo[key][index]) { catPoints[key] += 1; }
+
 }
 
 function setCatPoints() {
@@ -103,7 +106,7 @@ function maxCat() {
 function makeImageRequest(breed) {
     var headers =  {
         "Content-Type": "application/json",
-        "x-api-key": APIkey,
+        "x-api-key": key,
     };
 
     var parameters = {
@@ -165,15 +168,15 @@ function getCat() {
         makeBreedRequest(finalCat);
         makeImageRequest(finalCat);
         console.log("after requests in getCat");
+        document.body.innerHTML  = `
+        <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
+        <h1 id="cat-result">...</h1>
+        <p id="cat-desc">...</p>
+        <br />
+        <p id="cat-temp">...</p>
+        <img id="main-image" src="" alt="a cute cat"/>
+        `;
     }
-    document.body.innerHTML  = `
-    <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
-    <h1 id="cat-result">...</h1>
-    <p id="cat-desc">...</p>
-    <br />
-    <p id="cat-temp">...</p>
-    <img id="main-image" src="" alt="a cute cat"/>
-    `;
 }
 
 function loadCatInfo() {
@@ -186,25 +189,3 @@ function loadCatInfo() {
 function loadCatImage() {
     document.getElementById('main-image').src = imageURL;
 }
-
-// function loadAPI() {
-//     //This chains two promises together. First, client_secret.json will be read and parsed. Once it completes, tokens.json will be read and parsed.
-//     //Promise.all() could be used to conduct these two file reads asynchronously, which is more efficient.
-//     fs.readFile('APIKey.json', (err, data) => {
-//         if(err){
-//             console.log(err + "\n\nHave you created your APIKey.json file yet?")
-//         }else{
-//             data = JSON.parse(data);
-//             APIkey = data.api_key;
-//         }
-//     })
-// } 
-
-// function loadAPIKey() {
-//     var fr=new FileReader();
-//     fr.onload=function(){
-//         "APIKey.json".textContent=fr.result;
-//     }
-        
-//     console.log(fr.readAsText(this.files));
-// }
