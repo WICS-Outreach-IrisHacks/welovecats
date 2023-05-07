@@ -36,6 +36,15 @@ button:focus {
     background-color: rgb(191, 216, 191);
 }
 
+.cat-desc {
+    text-align: center;
+    font-size: larger;
+}
+
+.cat-temp {
+    text-align: center;
+    font-size: 15px;
+}
 
 #start {
     display: table-cell;

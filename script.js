@@ -3,10 +3,12 @@ let grooming = undefined;
 let social_needs = undefined;
 let indoor = undefined;
 let intelligence = undefined;
-let APIkey = undefined;
 const BREEDS_BASE_URL = "https://api.thecatapi.com/v1/breeds";
 const IMAGES_BASE_URL =  "https://api.thecatapi.com/v1/images/search" //?limit=10&breed_ids=beng&api_key=REPLACE_ME"
-var fs = require('fs');
+let description = undefined;
+let temperament = undefined;
+let catName = undefined;
+let imageURL = undefined;
 
 let catPoints = 
 { 
@@ -80,10 +82,12 @@ function setCatPoints() {
             }
         });
         console.log(catPoints);
+        return true;
         
     }
     else {
         alert("Please answer all the questions");
+        return false;
     }
 }
 
@@ -104,6 +108,27 @@ function makeImageRequest(breed) {
         "Content-Type": "application/json",
         "x-api-key": APIkey,
     };
+
+    var params = {
+        "limit": 1,
+        "breed_ids": breed,
+    }
+
+    const images = fetch(IMAGES_BASE_URL + "/" + breed, {method: 'GET', headers: headers, params:params}).then(response => {
+        console.log(IMAGES_BASE_URL + "/" + breed);
+        if(response.ok) {
+            console.log(response);
+            return response.json();
+        }
+    });
+
+    const processData = async () => {
+        const myDelayedData = await images;
+        console.log(myDelayedData);
+        imageURL = myDelayedData[0]['url'];
+        };
+
+    processData();
 }
 
 function makeBreedRequest(breed) {
@@ -111,33 +136,73 @@ function makeBreedRequest(breed) {
         "Content-Type": "application/json",
     };
 
-    fetch(BREEDS_BASE_URL + "/" + breed, {method: 'GET', headers: headers}).then(response => {
-        console.log(url);
+    const breedInfo = fetch(BREEDS_BASE_URL + "/" + breed, {method: 'GET', headers: headers}).then(response => {
+        console.log(BREEDS_BASE_URL + "/" + breed);
         if(response.ok) {
+            console.log(response);
             return response.json();
         }
     });
+
+    const processData = async () => {
+        const myDelayedData = await breedInfo;
+        console.log(myDelayedData);
+        description = myDelayedData['description'];
+        temperament = myDelayedData['temperament'];
+        catName = myDelayedData['name'];
+        console.log(catName);
+        };
+
+    processData();
 }
 
 function getCat() {
-    setCatPoints();
-    loadAPI();
-    // determine which cat is highest in catPoints -> API call
-    let finalCat = maxCat();
-    breedReturn = makeBreedRequest(finalCat);
-    console.log(breedReturn);
-    //imagesReturn = makeImageRequest(finalCat);
+    console.log("getCat");
+    let set = setCatPoints();
+    if (set === true) {
+        //loadAPIKey();
+        // determine which cat is highest in catPoints -> API call
+        let finalCat = maxCat();
+        makeBreedRequest(finalCat);
+        //makeImageRequest(finalCat);
+        console.log("after requests in getCat");
+        loadCatInfo();
+    }
+    document.body.innerHTML  = `
+    <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
+    <h1 id="cat-result">...</h1>
+    <p id="cat-desc">Description: </p>
+    <p id="cat-temp">Traits: </p>
+    <img id="main-image" src="" alt="a cute cat"/>
+    `;
+    loadCatInfo();
 }
 
-function loadAPI() {
-    //This chains two promises together. First, client_secret.json will be read and parsed. Once it completes, tokens.json will be read and parsed.
-    //Promise.all() could be used to conduct these two file reads asynchronously, which is more efficient.
-    fs.readFile('APIKey.json', (err, data) => {
-        if(err){
-            console.log(err + "\n\nHave you created your tokens and client_secret files yet?")
-        }else{
-            data = JSON.parse(data);
-            APIkey = data.api_key;
-        }
-    })
-} 
+function loadCatInfo() {
+    console.log(catName);
+    document.getElementById('cat-result').innerHTML = catName;
+    document.getElementById('cat-desc').innerHTML = description;
+    document.getElementById('cat-temp').innerHTML = temperament;
+}
+
+// function loadAPI() {
+//     //This chains two promises together. First, client_secret.json will be read and parsed. Once it completes, tokens.json will be read and parsed.
+//     //Promise.all() could be used to conduct these two file reads asynchronously, which is more efficient.
+//     fs.readFile('APIKey.json', (err, data) => {
+//         if(err){
+//             console.log(err + "\n\nHave you created your APIKey.json file yet?")
+//         }else{
+//             data = JSON.parse(data);
+//             APIkey = data.api_key;
+//         }
+//     })
+// } 
+
+// function loadAPIKey() {
+//     var fr=new FileReader();
+//     fr.onload=function(){
+//         "APIKey.json".textContent=fr.result;
+//     }
+        
+//     console.log(fr.readAsText(this.files));
+// }
