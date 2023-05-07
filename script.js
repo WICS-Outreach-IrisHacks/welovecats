@@ -56,6 +56,7 @@ function changeIndoor(value, event) {
 }
 
 function changeIntelligence(value, event) {
+    event.target.className = "selected";
     intelligence = value;
 }
 
