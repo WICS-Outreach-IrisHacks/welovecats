@@ -36,14 +36,18 @@ button:focus {
     background-color: rgb(191, 216, 191);
 }
 
-.cat-desc {
+#cat-desc {
+    margin: auto;
     text-align: center;
     font-size: larger;
+    width: 50%;
 }
 
-.cat-temp {
+#cat-temp {
+    margin: auto;
     text-align: center;
-    font-size: 15px;
+    font-size: larger;
+    width: 40%;
 }
 
 #start {

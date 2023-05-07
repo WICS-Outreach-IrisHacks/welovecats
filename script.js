@@ -4,7 +4,8 @@ let social_needs = undefined;
 let indoor = undefined;
 let intelligence = undefined;
 const BREEDS_BASE_URL = "https://api.thecatapi.com/v1/breeds";
-const IMAGES_BASE_URL =  "https://api.thecatapi.com/v1/images/search" //?limit=10&breed_ids=beng&api_key=REPLACE_ME"
+const IMAGES_BASE_URL =  "https://api.thecatapi.com/v1/images/search"; //?limit=10&breed_ids=beng&api_key=REPLACE_ME"
+let APIkey = "live_kMGI0wSz4LUHdvlhadXKk8fMnPx7N8t66jSLdQjJw0OWfD84322ydppCTMY9leZf";
 let description = undefined;
 let temperament = undefined;
 let catName = undefined;
@@ -168,8 +169,9 @@ function getCat() {
     document.body.innerHTML  = `
     <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
     <h1 id="cat-result">...</h1>
-    <p id="cat-desc">Description: </p>
-    <p id="cat-temp">Traits: </p>
+    <p id="cat-desc">...</p>
+    <br />
+    <p id="cat-temp">...</p>
     <img id="main-image" src="" alt="a cute cat"/>
     `;
 }
