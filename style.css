@@ -2,6 +2,17 @@ h1 {
     margin: auto;
     text-align: center;
     padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 'Medium 500';
+}
+
+h2 {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 'Regular 400';
+    font-style: italic;
 }
 
 body {
@@ -19,7 +30,10 @@ img {
     margin: auto;
     width: 50%;
     height: auto;
-    padding: 10px;
+    border: solid;
+    border-width: 5px;
+    border-color:rgb(247, 114, 172);
+    padding: 0px;
 }
 
 button {
@@ -34,6 +48,11 @@ button:focus {
 
 .selected {
     background-color: rgb(191, 216, 191);
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #cat-desc {

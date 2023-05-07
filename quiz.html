@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <script src="APIKey.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="energy-question"><font size="+2">How energetic are you on average?</font>
-        <br />
-        <br />
+    <div class="energy-question"><p>How energetic are you on average?</p>
         <button onclick="changeEnergy(0, event)">0</button>
         <button onclick="changeEnergy(1, event)">1</button>
         <button onclick="changeEnergy(2, event)">2</button>
@@ -23,9 +24,7 @@
         <span><font size="+1">sleep.....&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;WEEWOO</font></span>
     </div>
 
-    <div class="effort-question"><font size="+2">How much effort do you put into cleanliness?</font>
-        <br />
-        <br />
+    <div class="effort-question"><p>How much effort do you put into cleanliness?</p>
         <button onclick="changeGrooming(0, event)">0</button>
         <button onclick="changeGrooming(1, event)">1</button>
         <button onclick="changeGrooming(2, event)">2</button>
@@ -33,12 +32,10 @@
         <button onclick="changeGrooming(4, event)">4</button>
         <button onclick="changeGrooming(5, event)">5</button>
         <br />
-        <span><font size="+1">i am a slob&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;i am a clean freak</font></span>
+        <span><font size="+1">i am a slob&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;i am a clean freak</p></span>
     </div>
 
-    <div class="question"><font size="+2">How extroverted or introverted are you?</font>
-        <br />
-        <br />
+    <div class="question"><p>How extroverted or introverted are you?</p>
         <button onclick="changeSocialNeeds(0, event)">0</button>
         <button onclick="changeSocialNeeds(1, event)">1</button>
         <button onclick="changeSocialNeeds(2, event)">2</button>
@@ -46,12 +43,10 @@
         <button onclick="changeSocialNeeds(4, event)">4</button>
         <button onclick="changeSocialNeeds(5, event)">5</button>
         <br />
-        <span><font size="+1">introvert&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;extrovert</font></span>
+        <span><font size="+1">introvert&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;extrovert</p></span>
     </div>
 
-    <div class="question"><font size="+2">Are you a homebody or party animal rawr?</font>
-        <br />
-        <br />
+    <div class="question"><p>Are you a homebody or party animal rawr?</p>
         <button onclick="changeIndoor(0, event)">0</button>
         <button onclick="changeIndoor(1, event)">1</button>
         <button onclick="changeIndoor(2, event)">2</button>
@@ -59,12 +54,10 @@
         <button onclick="changeIndoor(4, event)">4</button>
         <button onclick="changeIndoor(5, event)">5</button>
         <br />
-        <span><font size="+1">i lurve ma couch..&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PARTYY!!</font></span>
+        <span><font size="+1">i lurve ma couch..&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PARTYY!!</p></span>
     </div>
 
-    <div class="question"><font size="+2">Do you want a dumb or smart cat?</font>
-        <br />
-        <br />
+    <div class="question"><p>Do you want a dumb or smart cat?</p>
         <button onclick="changeIntelligence(0, event)">0</button>
         <button onclick="changeIntelligence(1, event)">1</button>
         <button onclick="changeIntelligence(2, event)">2</button>
@@ -72,7 +65,7 @@
         <button onclick="changeIntelligence(4, event)">4</button>
         <button onclick="changeIntelligence(5, event)">5</button>
         <br />
-        <span><font size="+1">dumb dumb&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;einstein</font></span>
+        <span><font size="+1">dumb dumb&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;einstein</p></span>
     </div>
     
     <div><a id="result-link"><button class="submit" onclick="getCat()">Submit</button></a></div>

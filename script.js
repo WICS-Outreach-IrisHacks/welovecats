@@ -172,11 +172,13 @@ function getCat() {
         makeImageRequest(finalCat);
         console.log("after requests in getCat");
         document.body.innerHTML  = `
-        <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
+        <h1>YOUR IDEAL CAT TYPE IS</h1>
+        <h2>drumroll please...</h2>
         <h1 id="cat-result">...</h1>
         <p id="cat-desc">...</p>
         <br />
         <p id="cat-temp">...</p>
+        <br />
         <img id="main-image" src="" alt="a cute cat"/>
         `;
     }
