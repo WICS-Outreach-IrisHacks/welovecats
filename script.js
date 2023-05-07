@@ -174,6 +174,7 @@ function getCat() {
     <h1>YOUR IDEAL CAT TYPE IS<br />drumroll please...</h1>
     <h1 id="cat-result">...</h1>
     <p id="cat-desc">...</p>
+    <br />
     <p id="cat-temp">...</p>
     <img id="main-image" src="" alt="a cute cat"/>
     `;

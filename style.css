@@ -37,15 +37,17 @@ button:focus {
 }
 
 #cat-desc {
+    margin: auto;
     text-align: center;
     font-size: larger;
     width: 50%;
 }
 
 #cat-temp {
+    margin: auto;
     text-align: center;
-    font-size: 15px;
-    width: 200px;
+    font-size: larger;
+    width: 40%;
 }
 
 #start {
