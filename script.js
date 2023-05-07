@@ -110,13 +110,14 @@ function makeImageRequest(breed) {
         "x-api-key": APIkey,
     };
 
-    var params = {
+    var parameters = {
         "limit": 1,
         "breed_ids": breed,
     }
+    params =  new URLSearchParams(parameters);
 
-    const images = fetch(IMAGES_BASE_URL + "/" + breed, {method: 'GET', headers: headers, params:params}).then(response => {
-        console.log(IMAGES_BASE_URL + "/" + breed);
+    const images = fetch(IMAGES_BASE_URL + "?" + params, {method: 'GET', headers: headers}).then(response => {
+        console.log(IMAGES_BASE_URL + "?" + params);
         if(response.ok) {
             console.log(response);
             return response.json();
@@ -127,7 +128,8 @@ function makeImageRequest(breed) {
         const myDelayedData = await images;
         console.log(myDelayedData);
         imageURL = myDelayedData[0]['url'];
-        };
+        loadCatImage(); // load after data is returned
+    };
 
     processData();
 }
@@ -162,11 +164,10 @@ function getCat() {
     console.log("getCat");
     let set = setCatPoints();
     if (set === true) {
-        //loadAPIKey();
         // determine which cat is highest in catPoints -> API call
         let finalCat = maxCat();
         makeBreedRequest(finalCat);
-        //makeImageRequest(finalCat);
+        makeImageRequest(finalCat);
         console.log("after requests in getCat");
     }
     document.body.innerHTML  = `
@@ -183,6 +184,10 @@ function loadCatInfo() {
     document.getElementById('cat-result').innerHTML = catName;
     document.getElementById('cat-desc').innerHTML = description;
     document.getElementById('cat-temp').innerHTML = temperament;
+}
+
+function loadCatImage() {
+    document.getElementById('main-image').src = imageURL;
 }
 
 // function loadAPI() {
