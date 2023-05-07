@@ -9,72 +9,72 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="energy-question">How energetic are you on average? 
+    <div class="energy-question"><font size="+2">How energetic are you on average?</font>
         <br />
-        <span>sleep.....</span>
-        <button onclick="changeEnergy(0)">0</button>
-        <button onclick="changeEnergy(1)">1</button>
-        <button onclick="changeEnergy(2)">2</button>
-        <button onclick="changeEnergy(3)">3</button>
-        <button onclick="changeEnergy(4)">4</button>
-        <button onclick="changeEnergy(5)">5</button>
-        <span>WEEEWOOOO</span>
         <br />
+        <button onclick="changeEnergy(0, event)">0</button>
+        <button onclick="changeEnergy(1, event)">1</button>
+        <button onclick="changeEnergy(2, event)">2</button>
+        <button class="absolute" onclick="changeEnergy(3, event)">3</button>
+        <button onclick="changeEnergy(4, event)">4</button>
+        <button onclick="changeEnergy(5, event)">5</button>
+        <br />
+        <span><font size="+1">sleep.....&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;WEEWOO</font></span>
     </div>
 
-    <div class="effort-question">How much effort do you put into cleanliness?
+    <div class="effort-question"><font size="+2">How much effort do you put into cleanliness?</font>
         <br />
-        <span>i am a slob</span>
-        <button onclick="changeGrooming(0)">0</button>
-        <button onclick="changeGrooming(1)">1</button>
-        <button onclick="changeGrooming(2)">2</button>
-        <button onclick="changeGrooming(3)">3</button>
-        <button onclick="changeGrooming(4)">4</button>
-        <button onclick="changeGrooming(5)">5</button>
-        <span>i am a clean freak</span>
         <br />
+        <button onclick="changeGrooming(0, event)">0</button>
+        <button onclick="changeGrooming(1, event)">1</button>
+        <button onclick="changeGrooming(2, event)">2</button>
+        <button onclick="changeGrooming(3, event)">3</button>
+        <button onclick="changeGrooming(4, event)">4</button>
+        <button onclick="changeGrooming(5, event)">5</button>
+        <br />
+        <span><font size="+1">i am a slob&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;i am a clean freak</font></span>
     </div>
 
-    <div class="question">How extroverted or introverted are you?
+    <div class="question"><font size="+2">How extroverted or introverted are you?</font>
         <br />
-        <span>introvert</span>
-        <button onclick="changeSocialNeeds(0)">0</button>
-        <button onclick="changeSocialNeeds(1)">1</button>
-        <button onclick="changeSocialNeeds(2)">2</button>
-        <button onclick="changeSocialNeeds(3)">3</button>
-        <button onclick="changeSocialNeeds(4)">4</button>
-        <button onclick="changeSocialNeeds(5)">5</button>
-        <span>extrovert</span>
         <br />
+        <button onclick="changeSocialNeeds(0, event)">0</button>
+        <button onclick="changeSocialNeeds(1, event)">1</button>
+        <button onclick="changeSocialNeeds(2, event)">2</button>
+        <button onclick="changeSocialNeeds(3, event)">3</button>
+        <button onclick="changeSocialNeeds(4, event)">4</button>
+        <button onclick="changeSocialNeeds(5, event)">5</button>
+        <br />
+        <span><font size="+1">introvert&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;extrovert</font></span>
     </div>
 
-    <div class="question">Are you a hombebody or party animal rawr?
+    <div class="question"><font size="+2">Are you a hombebody or party animal rawr?</font>
         <br />
-        <span>i lurve ma couch..</span>
+        <br />
         <button onclick="changeIndoor(0, event)">0</button>
         <button onclick="changeIndoor(1, event)">1</button>
         <button onclick="changeIndoor(2, event)">2</button>
-        <button onclick="changeIndoor(3)">3</button>
-        <button onclick="changeIndoor(4)">4</button>
-        <button onclick="changeIndoor(5)">5</button>
-        <span>PARTYY!!</span>
+        <button onclick="changeIndoor(3, event)">3</button>
+        <button onclick="changeIndoor(4, event)">4</button>
+        <button onclick="changeIndoor(5, event)">5</button>
         <br />
+        <span><font size="+1">i lurve ma couch..&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PARTYY!!</font></span>
     </div>
 
-    <div class="question">Do you want a dumb or smart cat?
+    <div class="question"><font size="+2">Do you want a dumb or smart cat?</font>
         <br />
-        <span>dumb dumb</span>
-        <button onclick="changeIntelligence(0)">0</button>
-        <button onclick="changeIntelligence(1)">1</button>
-        <button onclick="changeIntelligence(2)">2</button>
-        <button onclick="changeIntelligence(3)">3</button>
-        <button onclick="changeIntelligence(4)">4</button>
-        <button onclick="changeIntelligence(5)">5</button>
-        <span>einstein</span>
         <br />
+        <button onclick="changeIntelligence(0, event)">0</button>
+        <button onclick="changeIntelligence(1, event)">1</button>
+        <button onclick="changeIntelligence(2, event)">2</button>
+        <button onclick="changeIntelligence(3, event)">3</button>
+        <button onclick="changeIntelligence(4, event)">4</button>
+        <button onclick="changeIntelligence(5, event)">5</button>
+        <br />
+        <span><font size="+1">dumb dumb&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;einstein</font></span>
     </div>
-
-    <button onclick="getCat()">Submit</button>
     
+    <div><a id="result-link" href="result.html"><button class="submit" onclick="getCat()">Submit</button></a></div>
+
 </body>
 </html>

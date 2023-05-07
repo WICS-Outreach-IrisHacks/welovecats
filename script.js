@@ -27,15 +27,24 @@ let catInfo = { // if indoor == 0, it's an outdoor cat
     lihu: [3, 1, 4, 1, 3]
 }
 
-function changeEnergy(value) {
+function changeEnergy(value, event) {
+    console.log(event);
+    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
+    event.target.className = "selected";
     energy_level = value;
 }
 
-function changeGrooming(value) {
+function changeGrooming(value, event) {
+    console.log(event);
+    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
+    event.target.className = "selected";
     grooming = value;
 }
 
-function changeSocialNeeds(value) {
+function changeSocialNeeds(value, event) {
+    console.log(event);
+    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
+    event.target.className = "selected";
     social_needs = value;
 }
 
@@ -46,7 +55,7 @@ function changeIndoor(value, event) {
     indoor = value;
 }
 
-function changeIntelligence(value) {
+function changeIntelligence(value, event) {
     intelligence = value;
 }
 
@@ -70,6 +79,7 @@ function setCatPoints() {
             }
         });
         console.log(catPoints);
+        
     }
     else {
         alert("Please answer all the questions");
@@ -109,8 +119,8 @@ function makeBreedRequest(breed) {
 }
 
 function getCat() {
-    loadAPI();
     setCatPoints();
+    loadAPI();
     // determine which cat is highest in catPoints -> API call
     let finalCat = maxCat();
     breedReturn = makeBreedRequest(finalCat);
