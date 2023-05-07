@@ -31,28 +31,24 @@ let catInfo = { // if indoor == 0, it's an outdoor cat
 
 function changeEnergy(value, event) {
     console.log(event);
-    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
     event.target.className = "selected";
     energy_level = value;
 }
 
 function changeGrooming(value, event) {
     console.log(event);
-    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
     event.target.className = "selected";
     grooming = value;
 }
 
 function changeSocialNeeds(value, event) {
     console.log(event);
-    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
     event.target.className = "selected";
     social_needs = value;
 }
 
 function changeIndoor(value, event) {
     console.log(event);
-    //document.getElementsByClassName('questinoons).fhilcegernb, clear all classes if want to have de-select
     event.target.className = "selected";
     indoor = value;
 }
