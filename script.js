@@ -128,9 +128,9 @@ function makeImageRequest(breed) {
     });
 
     const processData = async () => {
-        const myDelayedData = await images;
-        console.log(myDelayedData);
-        imageURL = myDelayedData[0]['url'];
+        const data = await images;
+        console.log(data);
+        imageURL = data[0]['url'];
         loadCatImage(); // load after data is returned
     };
 
@@ -151,12 +151,11 @@ function makeBreedRequest(breed) {
     });
 
     const processData = async () => {
-        const myDelayedData = await breedInfo;
-        console.log(myDelayedData);
-        description = myDelayedData['description'];
-        temperament = myDelayedData['temperament'];
-        catName = myDelayedData['name'];
-        console.log(catName);
+        const data = await breedInfo;
+        console.log(data);
+        description = data['description'];
+        temperament = data['temperament'];
+        catName = data['name'];
         loadCatInfo();
         };
 
