@@ -63,12 +63,16 @@ function allChecked() { // returns true if all are checked
 }
 
 function addPoints(value, key, index) {
-    if ( index === 3 )
-
-    else {
-        if (value === catInfo[key][index]) { catPoints[key] += 2; }
-        else if (value+1 === catInfo[key][index] || value-1 === catInfo[key][index]) { catPoints[key] += 1; }
-
+    if ( index === 3 ) {
+        if (value >= 3) {
+            value = 1;
+        }
+        else {
+            value = 0;
+        }
+    }
+    if (value === catInfo[key][index]) { catPoints[key] += 2; }
+    else if (value+1 === catInfo[key][index] || value-1 === catInfo[key][index]) { catPoints[key] += 1; }
 }
 
 function setCatPoints() {
