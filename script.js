@@ -95,6 +95,10 @@ function setCatPoints() {
     }
 }
 
+function yoMama() {
+    alert("Yo Mama so cat, she meow meow meow");
+}
+
 function maxCat() {
     let bestCat = undefined;
     let maxPoints = 0;
